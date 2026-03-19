@@ -11,15 +11,35 @@
   <link rel="stylesheet" href="style.css?v=10"/>
 
   <style>
-    /* Critical mobile overrides — inline to bypass cache */
-    @media screen and (max-width:640px) {
-      .hero-inner { display:flex !important; flex-direction:column !important; }
-      .hero-visual { display:none !important; }
-      .hero-stat-strip { display:flex !important; }
-      .hero-content { align-items:center !important; text-align:center !important; }
-      .hero-logo-block { justify-content:center !important; }
-      .hero-tagline { text-align:center !important; }
-      .hero-btn-p { width:100% !important; justify-content:center !important; }
+    /* MOBILE-FIRST critical layout — inline to guarantee no caching issues */
+    /* Default: single column, centred for ALL screens */
+    .hero-inner {
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:center !important;
+      text-align:center !important;
+    }
+    .hero-visual   { display:none !important; }
+    .hero-stat-strip { display:flex !important; }
+    .hero-content  { align-items:center !important; text-align:center !important; }
+    .hero-logo-block { justify-content:center !important; }
+    .hero-tagline  { text-align:center !important; }
+    .hero-btn-p    { width:100% !important; justify-content:center !important; }
+    /* Desktop: two-column, orb visible, stat strip hidden */
+    @media screen and (min-width:900px) {
+      .hero-inner {
+        display:grid !important;
+        grid-template-columns:52% 48% !important;
+        text-align:left !important;
+        align-items:center !important;
+      }
+      .hero-visual   { display:flex !important; }
+      .hero-stat-strip { display:none !important; }
+      .hero-scroll-hint { display:none !important; }
+      .hero-content  { align-items:flex-start !important; text-align:left !important; }
+      .hero-logo-block { justify-content:flex-start !important; }
+      .hero-tagline  { text-align:left !important; }
+      .hero-btn-p    { width:auto !important; }
     }
   </style>
 </head>
