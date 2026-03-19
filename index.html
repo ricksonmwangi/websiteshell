@@ -8,7 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css?v=6"/>
+  <link rel="stylesheet" href="style.css?v=10"/>
+
+  <style>
+    /* Critical mobile overrides — inline to bypass cache */
+    @media screen and (max-width:640px) {
+      .hero-inner { display:flex !important; flex-direction:column !important; }
+      .hero-visual { display:none !important; }
+      .hero-stat-strip { display:flex !important; }
+      .hero-content { align-items:center !important; text-align:center !important; }
+      .hero-logo-block { justify-content:center !important; }
+      .hero-tagline { text-align:center !important; }
+      .hero-btn-p { width:100% !important; justify-content:center !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,24 +29,24 @@
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <a href="#home" class="nav-logo">
-      <img src="rimwa-icon.png" alt="Rimwa Tech" class="nav-icon-img">
+      <img src="rimwa-icon.png" alt="Rimwa Tech" class="nav-icon-img"/>
       <span class="nav-wordmark">
         <span class="nw-rimwa">RIMWA</span>
         <span class="nw-tech">TECH</span>
       </span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#stack" class="nav-link">Stack</a></li>
+      <li><a href="#home"    class="nav-link active">Home</a></li>
+      <li><a href="#about"   class="nav-link">About</a></li>
+      <li><a href="#stack"   class="nav-link">Stack</a></li>
       <li><a href="#process" class="nav-link">Process</a></li>
       <li><a href="#pricing" class="nav-link">Pricing</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="theme-icon sun">☀</span>
-        <span class="theme-icon moon">☽</span>
+        <span class="theme-icon sun">&#9728;</span>
+        <span class="theme-icon moon">&#9789;</span>
       </button>
       <a href="#contact" class="nav-cta">Hire Us</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -49,7 +62,7 @@
 <section class="hero" id="home">
 
   <!-- Dark navy background + star particles -->
-  <canvas class="hero-stars" id="heroStars" aria-hidden="true" width="410" height="516"></canvas>
+  <canvas class="hero-stars" id="heroStars" aria-hidden="true"></canvas>
 
   <!-- Subtle left-side blue glow blob -->
   <div class="hero-glow-left" aria-hidden="true"></div>
@@ -57,27 +70,27 @@
   <!-- Circuit traces bottom-right (matching reference) -->
   <div class="hero-circuit" aria-hidden="true">
     <svg viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMax meet">
-      <path d="M600 400 L480 400 L480 350 L380 350 L380 300 L260 300 L260 380 L100 380" stroke="#1e90ff" stroke-width="1.8" stroke-linecap="round" opacity=".6"></path>
-      <path d="M600 350 L530 350 L530 290 L430 290 L430 330 L310 330" stroke="#00cfff" stroke-width="1.2" stroke-linecap="round" opacity=".5"></path>
-      <path d="M600 290 L560 290 L560 230 L470 230 L470 270 L360 270 L360 310" stroke="#1e90ff" stroke-width="1" stroke-linecap="round" opacity=".45"></path>
-      <path d="M600 420 L460 420 L460 380 L340 380 L340 410 L180 410" stroke="#00b4ff" stroke-width="2" stroke-linecap="round" opacity=".55"></path>
-      <path d="M600 230 L570 230 L570 170 L500 170 L500 210 L420 210" stroke="#56cfff" stroke-width="1" stroke-linecap="round" opacity=".38"></path>
+      <path d="M600 400 L480 400 L480 350 L380 350 L380 300 L260 300 L260 380 L100 380" stroke="#1e90ff" stroke-width="1.8" stroke-linecap="round" opacity=".6"/>
+      <path d="M600 350 L530 350 L530 290 L430 290 L430 330 L310 330" stroke="#00cfff" stroke-width="1.2" stroke-linecap="round" opacity=".5"/>
+      <path d="M600 290 L560 290 L560 230 L470 230 L470 270 L360 270 L360 310" stroke="#1e90ff" stroke-width="1" stroke-linecap="round" opacity=".45"/>
+      <path d="M600 420 L460 420 L460 380 L340 380 L340 410 L180 410" stroke="#00b4ff" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+      <path d="M600 230 L570 230 L570 170 L500 170 L500 210 L420 210" stroke="#56cfff" stroke-width="1" stroke-linecap="round" opacity=".38"/>
       <!-- Nodes -->
-      <circle cx="480" cy="400" r="4" fill="#1e90ff" opacity=".85"></circle>
-      <circle cx="380" cy="350" r="4" fill="#00cfff" opacity=".85"></circle>
-      <circle cx="260" cy="300" r="3.5" fill="#1e90ff" opacity=".75"></circle>
-      <circle cx="530" cy="290" r="3.5" fill="#00cfff" opacity=".75"></circle>
-      <circle cx="430" cy="330" r="3" fill="#1e90ff" opacity=".65"></circle>
-      <circle cx="460" cy="380" r="4" fill="#00cfff" opacity=".85"></circle>
-      <circle cx="560" cy="230" r="3" fill="#56cfff" opacity=".65"></circle>
-      <circle cx="500" cy="170" r="3" fill="#1e90ff" opacity=".65"></circle>
+      <circle cx="480" cy="400" r="4" fill="#1e90ff" opacity=".85"/>
+      <circle cx="380" cy="350" r="4" fill="#00cfff" opacity=".85"/>
+      <circle cx="260" cy="300" r="3.5" fill="#1e90ff" opacity=".75"/>
+      <circle cx="530" cy="290" r="3.5" fill="#00cfff" opacity=".75"/>
+      <circle cx="430" cy="330" r="3" fill="#1e90ff" opacity=".65"/>
+      <circle cx="460" cy="380" r="4" fill="#00cfff" opacity=".85"/>
+      <circle cx="560" cy="230" r="3" fill="#56cfff" opacity=".65"/>
+      <circle cx="500" cy="170" r="3" fill="#1e90ff" opacity=".65"/>
       <!-- Scatter glow dots -->
-      <circle cx="580" cy="200" r="2.5" fill="#56cfff" opacity=".55"></circle>
-      <circle cx="548" cy="145" r="2" fill="#1e90ff" opacity=".5"></circle>
-      <circle cx="592" cy="320" r="2.5" fill="#00cfff" opacity=".5"></circle>
-      <circle cx="520" cy="360" r="2" fill="#56cfff" opacity=".42"></circle>
-      <circle cx="588" cy="450" r="2.5" fill="#1e90ff" opacity=".45"></circle>
-      <circle cx="445" cy="250" r="1.8" fill="#00cfff" opacity=".4"></circle>
+      <circle cx="580" cy="200" r="2.5" fill="#56cfff" opacity=".55"/>
+      <circle cx="548" cy="145" r="2" fill="#1e90ff" opacity=".5"/>
+      <circle cx="592" cy="320" r="2.5" fill="#00cfff" opacity=".5"/>
+      <circle cx="520" cy="360" r="2" fill="#56cfff" opacity=".42"/>
+      <circle cx="588" cy="450" r="2.5" fill="#1e90ff" opacity=".45"/>
+      <circle cx="445" cy="250" r="1.8" fill="#00cfff" opacity=".4"/>
     </svg>
   </div>
 
@@ -89,10 +102,10 @@
       <!-- Logo block: R icon + RIMWA / TECH text stacked -->
       <div class="hero-logo-wrap">
         <div class="hero-logo-block">
-          <img src="rimwa-icon.png" alt="Rimwa Tech" class="hero-icon-img">
+          <img src="rimwa-icon.png" alt="Rimwa Tech" class="hero-icon-img"/>
           <div class="hero-logo-wordmark">
             <span class="hlw-rimwa">RIMWA</span>
-            <span class="hlw-tech">TECH<span class="hlw-dash">—</span></span>
+            <span class="hlw-tech">TECH<span class="hlw-dash">&mdash;</span></span>
           </div>
         </div>
       </div>
@@ -108,9 +121,39 @@
       <!-- Subtitle -->
       <p class="hero-sub">Transform your ideas into <strong>powerful websites</strong><br>and <strong>digital solutions.</strong></p>
 
-      <!-- CTA -->
-      <div class="hero-actions">
-        <a href="#contact" class="hero-btn-p">LET’S BUILD SOMETHING GREAT &nbsp;→</a>
+      <!-- Bottom group: CTA + stat strip + scroll hint -->
+      <div class="hero-bottom-group">
+
+        <!-- CTA -->
+        <div class="hero-actions">
+          <a href="#contact" class="hero-btn-p">LET&rsquo;S BUILD SOMETHING GREAT &nbsp;&rarr;</a>
+        </div>
+
+        <!-- Mobile stat strip -->
+        <div class="hero-stat-strip">
+          <div class="hss-card">
+            <span class="hss-icon">&#9883;</span>
+            <span class="hss-label">Full-Stack</span>
+            <span class="hss-sub">React &amp; Node</span>
+          </div>
+          <div class="hss-card">
+            <span class="hss-icon">&#128640;</span>
+            <span class="hss-label">2–8 Weeks</span>
+            <span class="hss-sub">Fast Delivery</span>
+          </div>
+          <div class="hss-card">
+            <span class="hss-icon">&#127758;</span>
+            <span class="hss-label">Nairobi, KE</span>
+            <span class="hss-sub">Global Quality</span>
+          </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <a href="#about" class="hero-scroll-hint" aria-label="Scroll to explore">
+          <span class="hsh-text">Explore</span>
+          <span class="hsh-arrow">&#8595;</span>
+        </a>
+
       </div>
 
     </div>
@@ -147,7 +190,7 @@
 
         <!-- Floating stat cards -->
         <div class="hero-card hc-1">
-          <span class="hc-icon">⚛</span>
+          <span class="hc-icon">&#9883;</span>
           <div class="hc-text">
             <strong>React &amp; Node</strong>
             <span>Full-Stack</span>
@@ -155,7 +198,7 @@
         </div>
 
         <div class="hero-card hc-2">
-          <span class="hc-icon">🚀</span>
+          <span class="hc-icon">&#128640;</span>
           <div class="hc-text">
             <strong>2–8 Weeks</strong>
             <span>Fast Delivery</span>
@@ -163,7 +206,7 @@
         </div>
 
         <div class="hero-card hc-3">
-          <span class="hc-icon">🌎</span>
+          <span class="hc-icon">&#127758;</span>
           <div class="hc-text">
             <strong>Nairobi, Kenya</strong>
             <span>Global Standards</span>
@@ -173,7 +216,7 @@
         <!-- Floating code fragments -->
         <div class="code-frag cf-1">&lt;div&gt;</div>
         <div class="code-frag cf-2">const app()</div>
-        <div class="code-frag cf-3">{ API }</div>
+        <div class="code-frag cf-3">&#123; API &#125;</div>
         <div class="code-frag cf-4">.then()</div>
 
         <!-- Scatter dots -->
@@ -207,34 +250,34 @@
           </div>
         </div>
         <div class="about-floating-card fc-1">
-          <span class="fc-icon">⚡</span>
-          <div><strong>Fast Delivery</strong><span>2–8 week turnaround</span></div>
+          <span class="fc-icon">&#9889;</span>
+          <div><strong>Fast Delivery</strong><span>2&ndash;8 week turnaround</span></div>
         </div>
         <div class="about-floating-card fc-2">
-          <span class="fc-icon">🔒</span>
+          <span class="fc-icon">&#128274;</span>
           <div><strong>Secure Code</strong><span>Best practices always</span></div>
         </div>
       </div>
-      <div class="about-content reveal">
+      <div class="about-content">
         <div class="section-label">About Us</div>
         <h2 class="section-title">A Kenyan dev team building smart digital solutions.</h2>
-        <p class="about-lead">We are Rimwa Tech — a full-stack web development studio based in Nairobi, Kenya, passionate about turning complex problems into elegant, high-performance solutions that grow your business.</p>
-        <p class="about-body">We understand the local market and build for it: mobile-first, data-efficient, and optimised for East African infrastructure realities — while delivering work that meets global standards. Every project includes clean documentation, responsive design, and ongoing support.</p>
+        <p class="about-lead">We are Rimwa Tech &mdash; a full-stack web development studio based in Nairobi, Kenya, passionate about turning complex problems into elegant, high-performance solutions that grow your business.</p>
+        <p class="about-body">We understand the local market and build for it: mobile-first, data-efficient, and optimised for East African infrastructure realities &mdash; while delivering work that meets global standards. Every project includes clean documentation, responsive design, and ongoing support.</p>
         <div class="about-values">
-          <div class="value-item reveal reveal-delay-1">
+          <div class="value-item">
             <div class="value-icon">01</div>
             <div><strong>Clean, maintainable code</strong><p>Written for humans, not just machines.</p></div>
           </div>
-          <div class="value-item reveal reveal-delay-2">
+          <div class="value-item">
             <div class="value-icon">02</div>
             <div><strong>Performance-first mindset</strong><p>Fast loads, optimised queries, smooth UX.</p></div>
           </div>
-          <div class="value-item reveal reveal-delay-3">
+          <div class="value-item">
             <div class="value-icon">03</div>
             <div><strong>Transparent communication</strong><p>You will always know what is happening.</p></div>
           </div>
         </div>
-        <a href="#contact" class="btn btn-primary">Let’s Talk →</a>
+        <a href="#contact" class="btn btn-primary">Let&rsquo;s Talk &rarr;</a>
       </div>
     </div>
   </div>
@@ -243,44 +286,44 @@
 <!-- TECH STACK -->
 <section class="stack" id="stack">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header">
       <div class="section-label">Tech Stack</div>
       <h2 class="section-title">Tools we master</h2>
       <p class="section-subtitle">Battle-tested technologies chosen for reliability, performance, and scalability.</p>
     </div>
     <div class="stack-grid">
-      <div class="stack-card reveal reveal-delay-1">
-        <div class="stack-icon">⚛</div>
+      <div class="stack-card">
+        <div class="stack-icon">&#9883;</div>
         <h3>React</h3>
         <p>Dynamic, component-driven UIs with hooks, context, and modern patterns. From SPAs to complex dashboards.</p>
         <div class="stack-tags"><span>SPA</span><span>Dashboards</span><span>PWA</span></div>
       </div>
-      <div class="stack-card reveal reveal-delay-2">
-        <div class="stack-icon">🟢</div>
+      <div class="stack-card">
+        <div class="stack-icon">&#128994;</div>
         <h3>Node.js</h3>
         <p>Scalable REST &amp; GraphQL APIs, real-time WebSocket servers, and microservice architectures with Express/Fastify.</p>
         <div class="stack-tags"><span>REST API</span><span>GraphQL</span><span>WebSockets</span></div>
       </div>
-      <div class="stack-card reveal reveal-delay-3">
-        <div class="stack-icon">🐘</div>
+      <div class="stack-card">
+        <div class="stack-icon">&#128024;</div>
         <h3>MySQL</h3>
         <p>Relational database design, complex queries, migrations, and performance optimisation for data-heavy apps.</p>
         <div class="stack-tags"><span>Schema Design</span><span>Indexing</span><span>Migrations</span></div>
       </div>
-      <div class="stack-card reveal reveal-delay-4">
-        <div class="stack-icon">🐘</div>
+      <div class="stack-card">
+        <div class="stack-icon">&#128024;</div>
         <h3>PostgreSQL</h3>
         <p>Advanced relational data with JSONB, full-text search, stored procedures, and enterprise-grade reliability.</p>
         <div class="stack-tags"><span>JSONB</span><span>Full-text</span><span>PostGIS</span></div>
       </div>
-      <div class="stack-card reveal reveal-delay-5">
-        <div class="stack-icon">🔥</div>
+      <div class="stack-card">
+        <div class="stack-icon">&#128293;</div>
         <h3>Firebase</h3>
         <p>Real-time databases, authentication, cloud functions, and hosting for rapid deployment and scaling.</p>
         <div class="stack-tags"><span>Realtime DB</span><span>Auth</span><span>Functions</span></div>
       </div>
-      <div class="stack-card reveal reveal-delay-5">
-        <div class="stack-icon">🐍</div>
+      <div class="stack-card">
+        <div class="stack-icon">&#128013;</div>
         <h3>Python</h3>
         <p>Backend automation, data processing pipelines, FastAPI/Django services, and web scraping solutions.</p>
         <div class="stack-tags"><span>FastAPI</span><span>Automation</span><span>Data</span></div>
@@ -292,64 +335,64 @@
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header">
       <div class="section-label">Our Process</div>
       <h2 class="section-title">How we go from idea to launch</h2>
       <p class="section-subtitle">A clear, collaborative process designed to keep you informed and your project on track.</p>
     </div>
     <div class="process-timeline">
-      <div class="process-step reveal reveal-delay-1">
+      <div class="process-step">
         <div class="step-dot"></div>
         <div class="step-content">
           <div class="step-number">01</div>
           <h3>Discovery Call</h3>
           <p>We start with a free 30-minute consultation to understand your goals, audience, timeline, and budget. We ask the right questions so nothing gets lost in translation.</p>
-          <div class="step-duration">📅 Free · 30 min</div>
+          <div class="step-duration">&#128197; Free &middot; 30 min</div>
         </div>
       </div>
-      <div class="process-step reveal reveal-delay-2">
+      <div class="process-step">
         <div class="step-dot"></div>
         <div class="step-content">
           <div class="step-number">02</div>
           <h3>Proposal &amp; Scope</h3>
-          <p>We deliver a detailed written proposal with scope, timeline, milestone breakdown, and fixed pricing. No hourly surprises — you know the full cost upfront.</p>
-          <div class="step-duration">📄 2–3 business days</div>
+          <p>We deliver a detailed written proposal with scope, timeline, milestone breakdown, and fixed pricing. No hourly surprises &mdash; you know the full cost upfront.</p>
+          <div class="step-duration">&#128196; 2&ndash;3 business days</div>
         </div>
       </div>
-      <div class="process-step reveal reveal-delay-3">
+      <div class="process-step">
         <div class="step-dot"></div>
         <div class="step-content">
           <div class="step-number">03</div>
           <h3>Design &amp; Architecture</h3>
           <p>Before writing a line of code, we plan the system architecture, database schema, and UI wireframes. This phase prevents costly changes later.</p>
-          <div class="step-duration">🎨 3–5 days</div>
+          <div class="step-duration">&#127912; 3&ndash;5 days</div>
         </div>
       </div>
-      <div class="process-step reveal reveal-delay-4">
+      <div class="process-step">
         <div class="step-dot"></div>
         <div class="step-content">
           <div class="step-number">04</div>
           <h3>Development Sprints</h3>
           <p>We build in weekly sprints with a shared project board so you can track progress in real time. Regular check-ins and demo previews keep you in the loop.</p>
-          <div class="step-duration">⚙ 1–6 weeks</div>
+          <div class="step-duration">&#9881; 1&ndash;6 weeks</div>
         </div>
       </div>
-      <div class="process-step reveal reveal-delay-5">
+      <div class="process-step">
         <div class="step-dot"></div>
         <div class="step-content">
           <div class="step-number">05</div>
           <h3>Review &amp; Testing</h3>
           <p>Thorough QA, cross-browser testing, performance audits, and security checks. You get a staging environment to review everything before we go live.</p>
-          <div class="step-duration">🧪 2–4 days</div>
+          <div class="step-duration">&#129514; 2&ndash;4 days</div>
         </div>
       </div>
-      <div class="process-step reveal reveal-delay-5">
+      <div class="process-step">
         <div class="step-dot"></div>
         <div class="step-content">
           <div class="step-number">06</div>
           <h3>Launch &amp; Handoff</h3>
-          <p>Deployment, domain setup, SSL, and performance monitoring. We provide full documentation and a handover session — you own your product completely.</p>
-          <div class="step-duration">🚀 Launch day + 14-day support</div>
+          <p>Deployment, domain setup, SSL, and performance monitoring. We provide full documentation and a handover session &mdash; you own your product completely.</p>
+          <div class="step-duration">&#128640; Launch day + 14-day support</div>
         </div>
       </div>
     </div>
@@ -359,75 +402,75 @@
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header">
       <div class="section-label">Transparent Pricing</div>
       <h2 class="section-title">Fixed-price packages. No surprises.</h2>
-      <p class="section-subtitle">All packages are priced per project, not per hour — so you know exactly what you are paying before work begins.</p>
+      <p class="section-subtitle">All packages are priced per project, not per hour &mdash; so you know exactly what you are paying before work begins.</p>
     </div>
     <div class="pricing-note">
-      <span class="note-icon">ℹ</span>
-      <p>Prices are set per deliverable, not by the hour. Complex features, third-party integrations, or custom designs may affect the final quote — we will always confirm pricing in writing before any work starts.</p>
+      <span class="note-icon">&#8505;</span>
+      <p>Prices are set per deliverable, not by the hour. Complex features, third-party integrations, or custom designs may affect the final quote &mdash; we will always confirm pricing in writing before any work starts.</p>
     </div>
     <div class="pricing-grid">
-      <div class="pricing-card reveal reveal-delay-1">
+      <div class="pricing-card">
         <div class="pricing-tier">Starter</div>
         <div class="pricing-price"><span class="price-currency">$</span>499<span class="price-suffix">&nbsp;/ project</span></div>
         <p class="pricing-desc">Perfect for individuals, freelancers, and small businesses needing a polished online presence.</p>
         <ul class="pricing-features">
-          <li>✓ Up to 5 pages (HTML/CSS/React)</li>
-          <li>✓ Mobile-responsive design</li>
-          <li>✓ Contact form integration</li>
-          <li>✓ Basic SEO setup</li>
-          <li>✓ Domain &amp; hosting guidance</li>
-          <li>✓ 14-day post-launch support</li>
-          <li class="feat-muted">✗ Backend / database</li>
-          <li class="feat-muted">✗ User authentication</li>
+          <li>&#10003; Up to 5 pages (HTML/CSS/React)</li>
+          <li>&#10003; Mobile-responsive design</li>
+          <li>&#10003; Contact form integration</li>
+          <li>&#10003; Basic SEO setup</li>
+          <li>&#10003; Domain &amp; hosting guidance</li>
+          <li>&#10003; 14-day post-launch support</li>
+          <li class="feat-muted">&#10007; Backend / database</li>
+          <li class="feat-muted">&#10007; User authentication</li>
         </ul>
         <a href="#contact" class="btn btn-outline">Get Started</a>
       </div>
-      <div class="pricing-card pricing-featured reveal reveal-delay-2">
+      <div class="pricing-card pricing-featured">
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-tier">Professional</div>
         <div class="pricing-price"><span class="price-currency">$</span>1,499<span class="price-suffix">&nbsp;/ project</span></div>
         <p class="pricing-desc">For businesses that need a full web application with a backend, database, and user accounts.</p>
         <ul class="pricing-features">
-          <li>✓ Full-stack React + Node.js app</li>
-          <li>✓ Custom REST API</li>
-          <li>✓ MySQL or PostgreSQL database</li>
-          <li>✓ User authentication (JWT/Firebase)</li>
-          <li>✓ Admin dashboard</li>
-          <li>✓ Advanced SEO + performance</li>
-          <li>✓ CI/CD deployment pipeline</li>
-          <li>✓ 30-day post-launch support</li>
+          <li>&#10003; Full-stack React + Node.js app</li>
+          <li>&#10003; Custom REST API</li>
+          <li>&#10003; MySQL or PostgreSQL database</li>
+          <li>&#10003; User authentication (JWT/Firebase)</li>
+          <li>&#10003; Admin dashboard</li>
+          <li>&#10003; Advanced SEO + performance</li>
+          <li>&#10003; CI/CD deployment pipeline</li>
+          <li>&#10003; 30-day post-launch support</li>
         </ul>
         <a href="#contact" class="btn btn-primary">Get Started</a>
       </div>
-      <div class="pricing-card reveal reveal-delay-3">
+      <div class="pricing-card">
         <div class="pricing-tier">Enterprise</div>
         <div class="pricing-price"><span class="price-currency">$</span>3,500<span class="price-suffix">+&nbsp;/ project</span></div>
         <p class="pricing-desc">For complex platforms, SaaS products, or businesses with high-scale or specialised requirements.</p>
         <ul class="pricing-features">
-          <li>✓ Everything in Professional</li>
-          <li>✓ Microservices architecture</li>
-          <li>✓ Python automation / data pipelines</li>
-          <li>✓ Firebase real-time features</li>
-          <li>✓ Third-party API integrations</li>
-          <li>✓ Role-based access control</li>
-          <li>✓ Custom analytics dashboard</li>
-          <li>✓ 60-day priority support</li>
+          <li>&#10003; Everything in Professional</li>
+          <li>&#10003; Microservices architecture</li>
+          <li>&#10003; Python automation / data pipelines</li>
+          <li>&#10003; Firebase real-time features</li>
+          <li>&#10003; Third-party API integrations</li>
+          <li>&#10003; Role-based access control</li>
+          <li>&#10003; Custom analytics dashboard</li>
+          <li>&#10003; 60-day priority support</li>
         </ul>
-        <a href="#contact" class="btn btn-outline">Let’s Discuss</a>
+        <a href="#contact" class="btn btn-outline">Let&rsquo;s Discuss</a>
       </div>
     </div>
     <div class="pricing-addons">
       <h3>Add-on Services</h3>
       <div class="addons-grid">
-        <div class="addon reveal reveal-delay-1"><span class="addon-name">UI/UX Redesign</span><span class="addon-price">from $299</span></div>
-        <div class="addon reveal reveal-delay-2"><span class="addon-name">Website Speed Audit &amp; Fix</span><span class="addon-price">from $149</span></div>
-        <div class="addon reveal reveal-delay-3"><span class="addon-name">Monthly Maintenance</span><span class="addon-price">from $99/mo</span></div>
-        <div class="addon reveal reveal-delay-4"><span class="addon-name">API Integration</span><span class="addon-price">from $199</span></div>
-        <div class="addon reveal reveal-delay-5"><span class="addon-name">Database Migration</span><span class="addon-price">from $249</span></div>
-        <div class="addon reveal reveal-delay-5"><span class="addon-name">Code Review &amp; Consulting</span><span class="addon-price">$75/hr</span></div>
+        <div class="addon"><span class="addon-name">UI/UX Redesign</span><span class="addon-price">from $299</span></div>
+        <div class="addon"><span class="addon-name">Website Speed Audit &amp; Fix</span><span class="addon-price">from $149</span></div>
+        <div class="addon"><span class="addon-name">Monthly Maintenance</span><span class="addon-price">from $99/mo</span></div>
+        <div class="addon"><span class="addon-name">API Integration</span><span class="addon-price">from $199</span></div>
+        <div class="addon"><span class="addon-name">Database Migration</span><span class="addon-price">from $249</span></div>
+        <div class="addon"><span class="addon-name">Code Review &amp; Consulting</span><span class="addon-price">$75/hr</span></div>
       </div>
     </div>
   </div>
@@ -437,56 +480,56 @@
 <section class="contact" id="contact">
   <div class="container">
     <div class="contact-grid">
-      <div class="contact-info reveal">
+      <div class="contact-info">
         <div class="section-label">Get In Touch</div>
         <h2 class="section-title">Ready to build something great?</h2>
-        <p>Whether you have a complete brief or just an idea on a napkin — we would love to hear about your project. Reach out and we will respond within 24 hours.</p>
+        <p>Whether you have a complete brief or just an idea on a napkin &mdash; we would love to hear about your project. Reach out and we will respond within 24 hours.</p>
         <div class="contact-methods">
-          <div class="contact-method reveal reveal-delay-1">
-            <div class="method-icon">✉</div>
+          <div class="contact-method">
+            <div class="method-icon">&#9993;</div>
             <div><strong>Email</strong><span>hello@rimwatech.dev</span></div>
           </div>
-          <div class="contact-method reveal reveal-delay-2">
-            <div class="method-icon">💬</div>
+          <div class="contact-method">
+            <div class="method-icon">&#128172;</div>
             <div><strong>WhatsApp</strong><span>+254 700 000 000</span></div>
           </div>
-          <div class="contact-method reveal reveal-delay-3">
-            <div class="method-icon">⌛</div>
+          <div class="contact-method">
+            <div class="method-icon">&#8987;</div>
             <div><strong>Response Time</strong><span>Within 24 hours</span></div>
           </div>
         </div>
         <div class="contact-socials">
           <a href="#" class="social-link" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"></path></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           </a>
           <a href="#" class="social-link" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
           <a href="#" class="social-link" aria-label="Twitter / X">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
         </div>
       </div>
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm" novalidate="">
+        <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
-              <input type="text" id="fname" name="fname" placeholder="Kamau" required="">
+              <input type="text" id="fname" name="fname" placeholder="Kamau" required/>
             </div>
             <div class="form-group">
               <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lname" placeholder="Njoroge" required="">
+              <input type="text" id="lname" name="lname" placeholder="Njoroge" required/>
             </div>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="kamau@example.co.ke" required="">
+            <input type="email" id="email" name="email" placeholder="kamau@example.co.ke" required/>
           </div>
           <div class="form-group">
             <label for="service">Service Interested In</label>
             <select id="service" name="service">
-              <option value="">Select a service…</option>
+              <option value="">Select a service&hellip;</option>
               <option>Starter Website ($499)</option>
               <option>Professional Web App ($1,499)</option>
               <option>Enterprise Platform ($3,500+)</option>
@@ -497,21 +540,21 @@
           <div class="form-group">
             <label for="budget">Estimated Budget</label>
             <select id="budget" name="budget">
-              <option value="">Select a range…</option>
+              <option value="">Select a range&hellip;</option>
               <option>Under $500</option>
-              <option>$500 – $1,500</option>
-              <option>$1,500 – $5,000</option>
+              <option>$500 &ndash; $1,500</option>
+              <option>$1,500 &ndash; $5,000</option>
               <option>$5,000+</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Tell us about your project</label>
-            <textarea id="message" name="message" rows="4" placeholder="Describe your project, goals, or any questions you have…" required=""></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Describe your project, goals, or any questions you have&hellip;" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+          <button type="submit" class="btn btn-primary btn-full">Send Message &rarr;</button>
           <p class="form-note">We will reply within 24 hours. No commitment required.</p>
           <div class="form-success" id="formSuccess">
-            🎉 Thanks! We will be in touch within 24 hours.
+            &#127881; Thanks! We will be in touch within 24 hours.
           </div>
         </form>
       </div>
@@ -523,7 +566,7 @@
 <section class="legal-section" id="privacy">
   <div class="container">
     <div class="legal-body">
-      <button class="legal-close" id="closePrivacy">← Back</button>
+      <button class="legal-close" id="closePrivacy">&#8592; Back</button>
       <div class="legal-header">
         <div class="section-label">Legal</div>
         <h2>Privacy Policy</h2>
@@ -542,7 +585,7 @@
       <p>We may use third-party tools including email providers, project management tools, and payment processors (e.g. M-Pesa, Stripe). Each has its own privacy policy.</p>
       <h3>6. Your Rights</h3>
       <p>You may request access to, correction of, or deletion of your personal data at any time by emailing hello@rimwatech.dev.</p>
-      <h3>7. Children’s Privacy</h3>
+      <h3>7. Children&rsquo;s Privacy</h3>
       <p>Our services are not directed to individuals under 18. We do not knowingly collect data from minors.</p>
       <h3>8. Changes</h3>
       <p>We may update this policy periodically. Changes are posted on this page with an updated date.</p>
@@ -556,7 +599,7 @@
 <section class="legal-section" id="terms">
   <div class="container">
     <div class="legal-body">
-      <button class="legal-close" id="closeTerms">← Back</button>
+      <button class="legal-close" id="closeTerms">&#8592; Back</button>
       <div class="legal-header">
         <div class="section-label">Legal</div>
         <h2>Terms of Service</h2>
@@ -582,7 +625,7 @@
       <h3>9. Limitation of Liability</h3>
       <p>Our total liability shall not exceed the amount paid for the specific project. We are not liable for indirect or consequential damages including loss of revenue or data.</p>
       <h3>10. Termination</h3>
-      <p>Either party may terminate with 14 days’ written notice. You will be invoiced for all work completed to date. The deposit is non-refundable once work has commenced.</p>
+      <p>Either party may terminate with 14 days&rsquo; written notice. You will be invoiced for all work completed to date. The deposit is non-refundable once work has commenced.</p>
       <h3>11. Governing Law</h3>
       <p>These Terms are governed by the laws of Kenya. Disputes are subject to the jurisdiction of the courts of Nairobi, Kenya.</p>
       <h3>12. Contact</h3>
@@ -599,13 +642,13 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#home" class="footer-logo-link">
-          <img src="rimwa-icon.png" alt="Rimwa Tech" class="nav-icon-img">
+          <img src="rimwa-icon.png" alt="Rimwa Tech" class="nav-icon-img"/>
           <span class="nav-wordmark">
             <span class="nw-rimwa">RIMWA</span>
             <span class="nw-tech">TECH</span>
           </span>
         </a>
-        <p>Building smart digital solutions for businesses and entrepreneurs — proudly from Nairobi, Kenya 🇰🇪</p>
+        <p>Building smart digital solutions for businesses and entrepreneurs &mdash; proudly from Nairobi, Kenya &#127472;&#127466;</p>
       </div>
       <div class="footer-links">
         <h4>Navigation</h4>
@@ -634,12 +677,11 @@
           <li><a href="#pricing">Maintenance</a></li>
         </ul>
       </div>
-    </div><!-- /footer-grid -->
-
+    </div>
     <div class="footer-bottom">
-      <p>© 2026 Rimwa Tech. All rights reserved. · Nairobi, Kenya 🇰🇪</p>
+      <p>&copy; 2026 Rimwa Tech. All rights reserved. &middot; Nairobi, Kenya &#127472;&#127466;</p>
       <p>
-        <a href="#" class="open-legal" data-target="privacy">Privacy</a> ·
+        <a href="#" class="open-legal" data-target="privacy">Privacy</a> &middot;
         <a href="#" class="open-legal" data-target="terms">Terms</a>
       </p>
     </div>
@@ -647,6 +689,5 @@
 </footer>
 
 <script src="main.js"></script>
-
-
 </body>
+</html>
