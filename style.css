@@ -519,12 +519,12 @@ section{padding:var(--section-gap) 0}
 }
 
 /* ── 640px: phones — full screen, stat strip replaces orb ── */
-@media(max-width:640px) {
+@media screen and (max-width:640px) {
   .hero {
-    min-height: 100vh; min-height: 100svh;
-    padding-top: var(--nav-height);
-    overflow: hidden;
-    display: flex; flex-direction: column;
+    min-height: 100vh !important; min-height: 100svh !important;
+    padding-top: var(--nav-height) !important;
+    overflow: hidden !important;
+    display: flex !important; flex-direction: column !important;
   }
   .hero-stars,
   .hero-glow-left,
@@ -582,7 +582,7 @@ section{padding:var(--section-gap) 0}
   }
 
   /* Hide orb */
-  .hero-visual { display: none; }
+  .hero-visual { display: none !important; }
 
   /* Logo */
   .hero-logo-wrap  { margin-bottom: .85rem; animation: none; opacity: 1; }
